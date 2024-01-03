@@ -1,0 +1,64 @@
+{
+  "kind": "collectionType",
+  "collectionName": "child_projects",
+  "info": {
+    "singularName": "child-project",
+    "pluralName": "child-projects",
+    "displayName": "Projects Child"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "image_desktop": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "image_mobile": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "site_url": {
+      "type": "string"
+    },
+    "video_desktop_demo": {
+      "allowedTypes": [
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "video_mobile_demo": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "project_id": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::project.project",
+      "inversedBy": "projects_children"
+    },
+    "git_url_backend": {
+      "type": "string"
+    },
+    "git_url_frontend": {
+      "type": "string"
+    }
+  }
+}

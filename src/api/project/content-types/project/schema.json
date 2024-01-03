@@ -1,0 +1,61 @@
+{
+  "kind": "collectionType",
+  "collectionName": "projects",
+  "info": {
+    "singularName": "project",
+    "pluralName": "projects",
+    "displayName": "Project",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description_intro": {
+      "type": "text"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "badges": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Featured",
+        "Other"
+      ]
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "description_long": {
+      "type": "text"
+    },
+    "button_text": {
+      "type": "string"
+    },
+    "profile_id": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::profile.profile",
+      "inversedBy": "projects"
+    },
+    "projects_children": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::child-project.child-project",
+      "mappedBy": "project_id"
+    }
+  }
+}
